@@ -12,16 +12,7 @@ function init() {
 
     document.body.appendChild(renderer.domElement);
 
-    // tentando uma foto por face
-    let loader = new THREE.TextureLoader();
-    const material = [
-        'spatula_bumbum', 'alho', 'babuina', 'joia_no_vaso', 'muffler', 'cansada',
-    ].map((text) => new THREE.MeshBasicMaterial({ map: loader.load(`./assets/textures/${text}.png`) }));
-    console.log(material);
-
-    // // todas as faces com a mesma foto
-    // const texture = new THREE.TextureLoader().load('./assets/textures/alho.png');
-    // const material = new THREE.MeshLambertMaterial({ map: texture });
+    const material = new THREE.MeshBasicMaterial({ color: 0x0000ff });
 
     const cube_edge = 3
     const geometry = new THREE.BoxGeometry(cube_edge, cube_edge, cube_edge);
